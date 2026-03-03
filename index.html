@@ -978,106 +978,106 @@
     
     
     function downloadPDF() {
-  console.log('=== DOWNLOAD PDF DIPANGGIL ===');
-  console.log('lastRegistrationData:', lastRegistrationData);
-  console.log('lastNoReg:', lastNoReg);
-  
-  if (!lastRegistrationData || !lastNoReg) {
-    alert('Data tidak ditemukan. Silakan submit formulir terlebih dahulu.');
-    return;
-  }
-  
-  const btn = document.getElementById('downloadBtn');
-  const originalText = btn.innerHTML;
-  btn.innerHTML = '⏳ MENYIAPKAN PDF...';
-  btn.disabled = true;
-  
-  // PASTIKAN DATA SESUAI DENGAN YANG DIHARAPKAN GAS
-  const dataForPDF = {
-    no_registrasi: lastNoReg,
-    nama: lastRegistrationData.nama || '',
-    jk: lastRegistrationData.jk || '',
-    nisn: lastRegistrationData.nisn || '',
-    tempat_lahir: lastRegistrationData.tempat_lahir || '',
-    tanggal_lahir: lastRegistrationData.tanggal_lahir || '',
-    nik: lastRegistrationData.nik || '',
-    no_kk: lastRegistrationData.no_kk || '',
-    alamat: lastRegistrationData.alamat || '',
-    kelurahan_desa: lastRegistrationData.kelurahan_desa || '',
-    kecamatan: lastRegistrationData.kecamatan || '',
-    kabupaten_kota: lastRegistrationData.kabupaten_kota || 'Minahasa',
-    hp: lastRegistrationData.hp || '',
-    email: lastRegistrationData.email || '',
-    sekolah_asal: lastRegistrationData.sekolah_asal || '',
-    nama_ayah: lastRegistrationData.nama_ayah || '',
-    ayah_pekerjaan: lastRegistrationData.ayah_pekerjaan || '',
-    ayah_hp: lastRegistrationData.ayah_hp || '',
-    ibu_nama: lastRegistrationData.ibu_nama || '',
-    ibu_pekerjaan: lastRegistrationData.ibu_pekerjaan || '',
-    ibu_hp: lastRegistrationData.ibu_hp || '',
-    anak_ke_berapa: lastRegistrationData.anak_ke_berapa || '',
-    jml_saudara_kandung: lastRegistrationData.jml_saudara_kandung || '',
-    jarak_rumah_ke_sekolah: lastRegistrationData.jarak_rumah_ke_sekolah || ''
-  };
-  
-  console.log('Data yang dikirim:', dataForPDF);
-  
-  // GANTI DENGAN URL GAS ANDA
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbxaOjkKROdTYiDxjzcs571RLOuxPiZJSynOMCPvsfrYeU1EyEywGwKqHmb8qHgy-M3w/exec';
-  
-  // Kirim request ke GAS
-  fetch(GAS_URL, {
-    method: 'POST',
-    headers: { 
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(dataForPDF)
-  })
-  .then(response => {
-    console.log('Response status:', response.status);
-    console.log('Response headers:', response.headers);
-    
-    // Cek tipe response
-    const contentType = response.headers.get('content-type');
-    console.log('Content-Type:', contentType);
-    
-    if (contentType && contentType.includes('application/json')) {
-      // Jika JSON (error)
-      return response.json().then(data => {
-        throw new Error(data.error || 'Unknown error');
+      console.log('=== DOWNLOAD PDF DIPANGGIL ===');
+      console.log('lastRegistrationData:', lastRegistrationData);
+      console.log('lastNoReg:', lastNoReg);
+      
+      if (!lastRegistrationData || !lastNoReg) {
+        alert('Data tidak ditemukan. Silakan submit formulir terlebih dahulu.');
+        return;
+      }
+      
+      const btn = document.getElementById('downloadBtn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '⏳ MENYIAPKAN PDF...';
+      btn.disabled = true;
+      
+      // PASTIKAN DATA SESUAI DENGAN YANG DIHARAPKAN GAS
+      const dataForPDF = {
+        no_registrasi: lastNoReg,
+        nama: lastRegistrationData.nama || '',
+        jk: lastRegistrationData.jk || '',
+        nisn: lastRegistrationData.nisn || '',
+        tempat_lahir: lastRegistrationData.tempat_lahir || '',
+        tanggal_lahir: lastRegistrationData.tanggal_lahir || '',
+        nik: lastRegistrationData.nik || '',
+        no_kk: lastRegistrationData.no_kk || '',
+        alamat: lastRegistrationData.alamat || '',
+        kelurahan_desa: lastRegistrationData.kelurahan_desa || '',
+        kecamatan: lastRegistrationData.kecamatan || '',
+        kabupaten_kota: lastRegistrationData.kabupaten_kota || 'Minahasa',
+        hp: lastRegistrationData.hp || '',
+        email: lastRegistrationData.email || '',
+        sekolah_asal: lastRegistrationData.sekolah_asal || '',
+        nama_ayah: lastRegistrationData.nama_ayah || '',
+        ayah_pekerjaan: lastRegistrationData.ayah_pekerjaan || '',
+        ayah_hp: lastRegistrationData.ayah_hp || '',
+        ibu_nama: lastRegistrationData.ibu_nama || '',
+        ibu_pekerjaan: lastRegistrationData.ibu_pekerjaan || '',
+        ibu_hp: lastRegistrationData.ibu_hp || '',
+        anak_ke_berapa: lastRegistrationData.anak_ke_berapa || '',
+        jml_saudara_kandung: lastRegistrationData.jml_saudara_kandung || '',
+        jarak_rumah_ke_sekolah: lastRegistrationData.jarak_rumah_ke_sekolah || ''
+      };
+      
+      console.log('Data yang dikirim:', dataForPDF);
+      
+      // GANTI DENGAN URL GAS ANDA
+      const GAS_URL = 'https://script.google.com/macros/s/AKfycbxaOjkKROdTYiDxjzcs571RLOuxPiZJSynOMCPvsfrYeU1EyEywGwKqHmb8qHgy-M3w/exec';
+      
+      // Kirim request ke GAS
+      fetch(GAS_URL, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataForPDF)
+      })
+      .then(response => {
+        console.log('Response status:', response.status);
+        console.log('Response headers:', response.headers);
+        
+        // Cek tipe response
+        const contentType = response.headers.get('content-type');
+        console.log('Content-Type:', contentType);
+        
+        if (contentType && contentType.includes('application/json')) {
+          // Jika JSON (error)
+          return response.json().then(data => {
+            throw new Error(data.error || 'Unknown error');
+          });
+        } else {
+          // Jika PDF
+          return response.blob();
+        }
+      })
+      .then(blob => {
+        console.log('PDF blob diterima, ukuran:', blob.size);
+        
+        // Buat URL untuk download
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Formulir_${lastNoReg}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        
+        // Bersihkan
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        
+        alert('✅ PDF berhasil didownload!\n\n📁 Arsip juga tersimpan di Google Drive panitia.');
+      })
+      .catch(error => {
+        console.error('Error detail:', error);
+        alert('❌ Gagal: ' + error.message);
+        btn.innerHTML = originalText;
+        btn.disabled = false;
       });
-    } else {
-      // Jika PDF
-      return response.blob();
     }
-  })
-  .then(blob => {
-    console.log('PDF blob diterima, ukuran:', blob.size);
-    
-    // Buat URL untuk download
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `Formulir_${lastNoReg}.pdf`;
-    document.body.appendChild(a);
-    a.click();
-    
-    // Bersihkan
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(a);
-    
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-    
-    alert('✅ PDF berhasil didownload!\n\n📁 Arsip juga tersimpan di Google Drive panitia.');
-  })
-  .catch(error => {
-    console.error('Error detail:', error);
-    alert('❌ Gagal: ' + error.message);
-    btn.innerHTML = originalText;
-    btn.disabled = false;
-  });
-}
 
     // Fungsi bantu format tanggal
     function formatTanggal(tanggal) {
