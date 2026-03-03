@@ -1,0 +1,63 @@
+# File sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# File editor
+*.sublime-*
+*.sublime-workspace
+*.idea
+*.vscode
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# File log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# File environment (jika ada)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Folder dependencies (jika nanti pakai npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# File build (jika nanti pakai build tool)
+dist/
+build/
+*.css.map
+*.js.map
+
+# File backup
+*.bak
+*.backup
+
+# File temporary
+*.tmp
+*.temp
+*.cache
+
+# File konfigurasi lokal
+config.local.json
+secrets.json
+
+# File PDF (jangan upload PDF ke repo)
+*.pdf
+!README.pdf  # kecuali README.pdf jika ada
+
+# File gambar besar (opsional, bisa dihapus jika perlu)
+*.psd
+*.ai
+*.sketch
