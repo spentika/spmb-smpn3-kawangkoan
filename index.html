@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <base target="_top">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <title>SPMB - SMP Negeri 3 Kawangkoan 2026/2027</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
-
-    /* Google Font Import */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
     body {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -47,95 +46,20 @@
       border-radius: 50%;
     }
 
-    .bg-bubbles li:nth-child(1) {
-      left: 10%;
-      width: 80px;
-      height: 80px;
-      animation-delay: 0s;
-      animation-duration: 12s;
-    }
-
-    .bg-bubbles li:nth-child(2) {
-      left: 20%;
-      width: 40px;
-      height: 40px;
-      animation-delay: 2s;
-      animation-duration: 10s;
-    }
-
-    .bg-bubbles li:nth-child(3) {
-      left: 25%;
-      width: 120px;
-      height: 120px;
-      animation-delay: 4s;
-      animation-duration: 20s;
-    }
-
-    .bg-bubbles li:nth-child(4) {
-      left: 40%;
-      width: 60px;
-      height: 60px;
-      animation-delay: 0s;
-      animation-duration: 15s;
-    }
-
-    .bg-bubbles li:nth-child(5) {
-      left: 70%;
-      width: 100px;
-      height: 100px;
-      animation-delay: 0s;
-      animation-duration: 18s;
-    }
-
-    .bg-bubbles li:nth-child(6) {
-      left: 80%;
-      width: 50px;
-      height: 50px;
-      animation-delay: 3s;
-      animation-duration: 12s;
-    }
-
-    .bg-bubbles li:nth-child(7) {
-      left: 32%;
-      width: 150px;
-      height: 150px;
-      animation-delay: 7s;
-      animation-duration: 25s;
-    }
-
-    .bg-bubbles li:nth-child(8) {
-      left: 55%;
-      width: 70px;
-      height: 70px;
-      animation-delay: 1s;
-      animation-duration: 14s;
-    }
-
-    .bg-bubbles li:nth-child(9) {
-      left: 15%;
-      width: 45px;
-      height: 45px;
-      animation-delay: 9s;
-      animation-duration: 11s;
-    }
-
-    .bg-bubbles li:nth-child(10) {
-      left: 90%;
-      width: 85px;
-      height: 85px;
-      animation-delay: 5s;
-      animation-duration: 22s;
-    }
+    .bg-bubbles li:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 12s; }
+    .bg-bubbles li:nth-child(2) { left: 20%; width: 40px; height: 40px; animation-delay: 2s; animation-duration: 10s; }
+    .bg-bubbles li:nth-child(3) { left: 25%; width: 120px; height: 120px; animation-delay: 4s; animation-duration: 20s; }
+    .bg-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 15s; }
+    .bg-bubbles li:nth-child(5) { left: 70%; width: 100px; height: 100px; animation-delay: 0s; animation-duration: 18s; }
+    .bg-bubbles li:nth-child(6) { left: 80%; width: 50px; height: 50px; animation-delay: 3s; animation-duration: 12s; }
+    .bg-bubbles li:nth-child(7) { left: 32%; width: 150px; height: 150px; animation-delay: 7s; animation-duration: 25s; }
+    .bg-bubbles li:nth-child(8) { left: 55%; width: 70px; height: 70px; animation-delay: 1s; animation-duration: 14s; }
+    .bg-bubbles li:nth-child(9) { left: 15%; width: 45px; height: 45px; animation-delay: 9s; animation-duration: 11s; }
+    .bg-bubbles li:nth-child(10) { left: 90%; width: 85px; height: 85px; animation-delay: 5s; animation-duration: 22s; }
 
     @keyframes square {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-1000px) rotate(600deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-1000px) rotate(600deg); opacity: 0; }
     }
 
     .container {
@@ -150,7 +74,6 @@
       justify-content: center;
     }
 
-    /* Landing Page Styles */
     #landingPage {
       width: 100%;
       animation: fadeIn 1s ease-in;
@@ -178,51 +101,55 @@
     .hero-header {
       background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
       color: white;
-      padding: 50px 40px;
+      padding: 30px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .logo-container img {
+      height: 80px;
+      width: auto;
     }
 
-    .hero-header h1 {
-      font-size: 24px !important;
-      line-height: 1.3;
+    @media (max-width: 768px) {
+      .logo-container img {
+        height: 60px;
+      }
     }
 
     .hero-header h2 {
-      font-size: 18px !important;
+      font-size: 20px;
+      margin-bottom: 5px;
     }
 
-    .hero-header .tahun-ajaran {
-      font-size: 14px;
-      padding: 8px 15px;
+    .hero-header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
     }
 
-    .hero-header > div:first-child {
-      flex-direction: column !important;
-      gap: 10px !important;
+    .tahun-ajaran {
+      background: rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
     }
-
-    
 
     .hero-body {
-      padding: 50px 40px;
+      padding: 40px 30px;
     }
 
     .info-grid {
@@ -258,18 +185,6 @@
       margin: 0 auto 20px;
       color: white;
       font-size: 32px;
-    }
-
-    .info-card h3 {
-      color: #2c3e50;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .info-card p {
-      color: #6c757d;
-      font-size: 14px;
-      line-height: 1.6;
     }
 
     .requirements {
@@ -334,6 +249,17 @@
       font-weight: bold;
     }
 
+    @media (max-width: 768px) {
+      .step:not(:last-child)::after {
+        content: '↓';
+        right: auto;
+        bottom: -30px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
     .step-number {
       width: 60px;
       height: 60px;
@@ -348,17 +274,6 @@
       margin: 0 auto 20px;
     }
 
-    .step h4 {
-      color: #2c3e50;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .step p {
-      color: #6c757d;
-      font-size: 14px;
-    }
-
     .cta-section {
       text-align: center;
       margin: 40px 0;
@@ -366,14 +281,15 @@
 
     .btn {
       display: inline-block;
-      padding: 18px 50px;
-      font-size: 18px;
+      padding: 15px 40px;
+      font-size: 16px;
       font-weight: 600;
       text-decoration: none;
       border-radius: 50px;
       transition: all 0.3s ease;
       cursor: pointer;
       border: none;
+      margin: 5px;
     }
 
     .btn-primary {
@@ -391,7 +307,6 @@
       background: transparent;
       border: 2px solid #3498db;
       color: #3498db;
-      margin-left: 15px;
     }
 
     .btn-outline:hover {
@@ -408,15 +323,11 @@
       margin-top: 30px;
     }
 
-    .countdown h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
     .countdown-timer {
       display: flex;
       justify-content: center;
       gap: 30px;
+      flex-wrap: wrap;
     }
 
     .countdown-item {
@@ -427,11 +338,6 @@
       font-size: 36px;
       font-weight: 700;
       line-height: 1;
-    }
-
-    .countdown-label {
-      font-size: 14px;
-      opacity: 0.9;
     }
 
     footer {
@@ -485,11 +391,6 @@
 
     .back-btn:hover {
       background: rgba(255,255,255,0.3);
-    }
-
-    .form-header h2 {
-      font-size: 28px;
-      margin-bottom: 5px;
     }
 
     .form-body {
@@ -550,16 +451,31 @@
     }
 
     .radio-group {
-      display: flex;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
       padding: 8px 0;
     }
 
     .radio-group label {
       display: flex;
       align-items: center;
-      gap: 5px;
+      justify-content: center;
+      gap: 8px;
       font-weight: normal;
+      cursor: pointer;
+      padding: 12px 5px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border: 2px solid #dee2e6;
+      transition: all 0.3s;
+    }
+
+    .radio-group input[type="radio"]:checked + label,
+    .radio-group label:has(input:checked) {
+      background: #3498db;
+      color: white;
+      border-color: #2980b9;
     }
 
     .alert {
@@ -607,6 +523,7 @@
       border-radius: 15px;
       padding: 40px;
       text-align: center;
+      display: none;
     }
 
     .result-container h3 {
@@ -634,112 +551,36 @@
       display: inline-block;
       margin-top: 20px;
       font-weight: 600;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-download:hover {
       background: #218838;
     }
-
-    @media (max-width: 768px) {
-      .hero-header h1 {
-        font-size: 32px;
-      }
-      
-      .hero-header h2 {
-        font-size: 18px;
-      }
-      
-      .steps {
-        flex-direction: column;
-      }
-      
-      .step:not(:last-child)::after {
-        content: '↓';
-        right: auto;
-        bottom: -30px;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .countdown-timer {
-        gap: 15px;
-      }
-      
-      .countdown-number {
-        font-size: 24px;
-      }
-    }
-
-    <!-- Style untuk modal -->
-  
-    #videoModal {
-      animation: fadeInModal 0.3s ease;
-    }
-    
-    @keyframes fadeInModal {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    /* Animasi untuk thumbnail */
-    .video-thumbnail {
-      transition: transform 0.3s;
-    }
-    
-    .video-thumbnail:hover {
-      transform: scale(1.02);
-    }
-    
-    /* Responsive untuk mobile */
-    @media (max-width: 768px) {
-      .video-tutorial .btn {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
   <ul class="bg-bubbles">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
   </ul>
 
   <div class="container">
     <!-- LANDING PAGE -->
     <div id="landingPage">
       <div class="hero-card">
-       
         <div class="hero-header">
-          <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 20px;">
-            <!-- Logo Dinas Pendidikan  -->
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co.com/HTVZh9QC/logo-minahasa.png" alt="logo minahasa" height="100px" width="auto" border="0"></a>
-            
-            <!-- Teks Tengah -->
+          <div class="logo-container">
+            <img src="https://i.ibb.co.com/HTVZh9QC/logo-minahasa.png" alt="Logo Minahasa">
             <div style="text-align: center;">
-              <div style="font-size: 16px; opacity: 0.9; font-weight: 300;">
-                DINAS PENDIDIKAN KABUPATEN MINAHASA
-              </div>
-              <h2 style="margin-bottom: 5px; font-size: 24px;">SMP NEGERI 3 KAWANGKOAN</h2>
-              <h1 style="margin-bottom: 5px; font-size: 36px;">PENERIMAAN MURID BARU</h1>
+              <div style="font-size: 14px; opacity: 0.9;">DINAS PENDIDIKAN KABUPATEN MINAHASA</div>
+              <h2>SMP NEGERI 3 KAWANGKOAN</h2>
+              <h1>PENERIMAAN MURID BARU</h1>
             </div>
-            
-            <!-- Logo Sekolah -->
-            <a href="https://ibb.co.com/3mwDfcKC"><img src="https://i.ibb.co.com/9HJFwWPr/LOGO-SMP-3-KAWANGKOAN.png" alt="LOGO-SMP-3-KAWANGKOAN" height="100px" width="auto" border="0"></a>
-            
+            <img src="https://i.ibb.co.com/9HJFwWPr/LOGO-SMP-3-KAWANGKOAN.png" alt="Logo Sekolah">
           </div>
-          
-          <div class="tahun-ajaran" style="margin-top: 10px;">
-            TAHUN PELAJARAN 2026/2027
-          </div>
+          <div class="tahun-ajaran">TAHUN PELAJARAN 2026/2027</div>
         </div>
         
         <div class="hero-body">
@@ -753,7 +594,7 @@
             <div class="info-card">
               <div class="info-icon">📋</div>
               <h3>Formulir Otomatis</h3>
-              <p>Formulir pendaftaran langsung terisi dan bisa dicetak dalam format PDF.</p>
+              <p>Formulir pendaftaran langsung terisi dan bisa dicetak.</p>
             </div>
             <div class="info-card">
               <div class="info-icon">⏰</div>
@@ -764,334 +605,144 @@
 
           <!-- Requirements -->
           <div class="requirements">
-            <h3>
-              <span>📌</span>
-              Persyaratan yang Harus Disiapkan
-            </h3>
+            <h3>📌 Persyaratan yang Harus Disiapkan</h3>
             <div class="requirements-list">
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>Foto copy AKTA KELAHIRAN (2 lembar)</span>
-              </div>
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>Foto copy KARTU KELUARGA (2 lembar)</span>
-              </div>
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>Pas foto 3x4 (2 lembar)</span>
-              </div>
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>Map warna putih</span>
-              </div>
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>NISN dan NIK</span>
-              </div>
-              <div class="requirement-item">
-                <i>✓</i>
-                <span>Data orang tua/wali</span>
-              </div>
+              <div class="requirement-item"><i>✓</i> <span>Foto copy AKTA KELAHIRAN (2 lembar)</span></div>
+              <div class="requirement-item"><i>✓</i> <span>Foto copy KARTU KELUARGA (2 lembar)</span></div>
+              <div class="requirement-item"><i>✓</i> <span>Pas foto 3x4 (2 lembar)</span></div>
+              <div class="requirement-item"><i>✓</i> <span>Map warna putih</span></div>
+              <div class="requirement-item"><i>✓</i> <span>NISN dan NIK</span></div>
+              <div class="requirement-item"><i>✓</i> <span>Data orang tua/wali</span></div>
             </div>
           </div>
 
           <!-- Steps -->
-          <h3 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">
-            Cara Mendaftar
-          </h3>
+          <h3 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Cara Mendaftar</h3>
           <div class="steps">
-            <div class="step">
-              <div class="step-number">1</div>
-              <h4>Isi Formulir</h4>
-              <p>Klik tombol "Daftar Sekarang" dan isi semua data dengan lengkap dan benar</p>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <h4>Dapatkan No. Registrasi</h4>
-              <p>Sistem akan membuat nomor registrasi otomatis untuk Anda</p>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <h4>Download PDF</h4>
-              <p>Download formulir yang sudah terisi dan siap cetak</p>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <h4>Bawa ke Sekolah</h4>
-              <p>Bawa formulir dan kelengkapan lain ke sekolah sebelum 12 Juni 2026</p>
-            </div>
-          </div>
-
-          <!-- VIDEO TUTORIAL SECTION (PILIHAN 1) -->
-          <div class="video-tutorial" style="margin: 50px 0 30px;">
-            <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%); 
-                        padding: 35px; border-radius: 25px; text-align: center;
-                        border: 1px solid rgba(255,255,255,0.3);
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-              
-              <!-- Header Video -->
-              <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
-                <div style="background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-                            width: 60px; height: 60px; border-radius: 50%;
-                            display: flex; align-items: center; justify-content: center;">
-                  <span style="font-size: 30px;">🎬</span>
-                </div>
-                <div>
-                  <h3 style="color: #2c3e50; font-size: 28px; margin: 0; 
-                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                            -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                    TUTORIAL PENDAFTARAN
-                  </h3>
-                  <p style="color: #6c757d; margin: 5px 0 0; font-size: 15px;">
-                    Tonton video berikut sebelum mendaftar
-                  </p>
-                </div>
-              </div>
-              
-              <!-- Video Thumbnail dengan Play Button -->
-              <div style="max-width: 700px; margin: 20px auto; border-radius: 20px; overflow: hidden; 
-                          box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative;
-                          cursor: pointer; transition: transform 0.3s;"
-                  onclick="openVideoModal()"
-                  onmouseover="this.style.transform='scale(1.02)'"
-                  onmouseout="this.style.transform='scale(1)'">
-                
-                <!-- Thumbnail YouTube (ganti VIDEO_ID) -->
-                <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" 
-                    alt="Video Tutorial Pendaftaran" 
-                    style="width: 100%; display: block;"
-                    onerror="this.src='https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg'">
-                
-                <!-- Play Button Overlay -->
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                            background: rgba(255, 0, 0, 0.9); width: 90px; height: 90px; border-radius: 50%;
-                            display: flex; align-items: center; justify-content: center;
-                            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                            border: 4px solid rgba(255,255,255,0.5);
-                            transition: all 0.3s;">
-                  <span style="color: white; font-size: 45px; margin-left: 5px;">▶</span>
-                </div>
-                
-                <!-- Durasi Video -->
-                <div style="position: absolute; bottom: 15px; right: 15px; 
-                            background: rgba(0,0,0,0.8); color: white; 
-                            padding: 6px 15px; border-radius: 30px; 
-                            font-size: 14px; font-weight: bold;
-                            backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2);">
-                  ⏱️ 3:25
-                </div>
-                
-                <!-- Label HD -->
-                <div style="position: absolute; top: 15px; left: 15px; 
-                            background: rgba(0,0,0,0.6); color: #ffd700; 
-                            padding: 4px 12px; border-radius: 20px; 
-                            font-size: 12px; font-weight: bold;
-                            backdrop-filter: blur(5px);">
-                  📺 HD
-                </div>
-              </div>
-              
-              <!-- Keterangan Video -->
-              <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 8px; background: white; padding: 8px 20px; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                  <span style="color: #28a745;">✓</span>
-                  <span style="color: #495057;">Panduan lengkap</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; background: white; padding: 8px 20px; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                  <span style="color: #28a745;">✓</span>
-                  <span style="color: #495057;">Cara isi formulir</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 8px; background: white; padding: 8px 20px; border-radius: 50px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                  <span style="color: #28a745;">✓</span>
-                  <span style="color: #495057;">Tips & trik</span>
-                </div>
-              </div>
-              
-              <!-- Tombol Tonton -->
-              <button onclick="openVideoModal()" 
-                      style="margin-top: 25px; background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-                            color: white; border: none; padding: 12px 40px; border-radius: 50px;
-                            font-size: 16px; font-weight: 600; cursor: pointer;
-                            box-shadow: 0 10px 20px rgba(255, 65, 108, 0.3);
-                            transition: all 0.3s; display: inline-flex; align-items: center; gap: 10px;"
-                      onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 15px 30px rgba(255, 65, 108, 0.4)'"
-                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 20px rgba(255, 65, 108, 0.3)'">
-                <span style="font-size: 20px;">▶</span>
-                PUTAR VIDEO TUTORIAL
-              </button>
-              
-              <p style="margin-top: 15px; color: #6c757d; font-size: 13px;">
-                ⏰ Pastikan koneksi internet stabil untuk menonton video
-              </p>
-              
-            </div>
+            <div class="step"><div class="step-number">1</div><h4>Isi Formulir</h4><p>Klik tombol "Daftar Sekarang" dan isi data dengan lengkap</p></div>
+            <div class="step"><div class="step-number">2</div><h4>Dapatkan No. Registrasi</h4><p>Sistem akan membuat nomor registrasi otomatis</p></div>
+            <div class="step"><div class="step-number">3</div><h4>Download PDF</h4><p>Download formulir yang sudah terisi</p></div>
+            <div class="step"><div class="step-number">4</div><h4>Bawa ke Sekolah</h4><p>Bawa formulir dan kelengkapan lain ke sekolah</p></div>
           </div>
 
           <!-- CTA Buttons -->
           <div class="cta-section">
-            <button onclick="showForm()" class="btn btn-primary">
-              🚀 DAFTAR SEKARANG
-            </button>
-            <a href="#info" class="btn btn-outline" onclick="alert('Hubungi Panitia PMB di: (0431) 123456')">
-              📞 KONTAK PANITIA
-            </a>
+            <button onclick="showForm()" class="btn btn-primary">🚀 DAFTAR SEKARANG</button>
+            <button onclick="alert('Hubungi Panitia PMB di: (0431) 123456')" class="btn btn-outline">📞 KONTAK PANITIA</button>
           </div>
 
           <!-- Countdown -->
           <div class="countdown">
             <h4>⏰ BATAS AKHIR PENGUMPULAN BERKAS</h4>
             <div class="countdown-timer">
-              <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Hari</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Jam</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Menit</div>
-              </div>
-              <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Detik</div>
-              </div>
+              <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Hari</div></div>
+              <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Jam</div></div>
+              <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Menit</div></div>
+              <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Detik</div></div>
             </div>
-            <p style="margin-top: 15px; font-size: 14px;">
-              Kumpulkan formulir cetak + kelengkapan ke sekolah sebelum 12 Juni 2026
-            </p>
+            <p style="margin-top: 15px; font-size: 14px;">Kumpulkan formulir cetak + kelengkapan ke sekolah sebelum 09 Juli 2026</p>
           </div>
         </div>
         
         <footer>
-          <p>© 2026 Panitia Penerimaan Murid Baru SMP Negeri 3 Kawangkoan</p>
-          <p>Jl. Raya Kiawa Tomohon, Kiawa Satu Utara Kec. Kawangkoan Utara, Kab. Minahasa, Sulawesi Utara</p>
-          <p style="margin-top: 10px; font-size: 12px;">website: spmb.smpn3kawangkoan.sch.id | Telp: (0431) 123456</p>
+          <p>© 2026 Penerimaan Murid Baru SMP Negeri 3 Kawangkoan</p>
+          <p>Jl. Raya Kiawa Tomohon, Kiawa Satu Utara Kec. Kawangkoan Utara, Kab. Minahasa</p>
         </footer>
       </div>
     </div>
 
-    <!-- FORM PAGE (AWALNYA DISEMBUNYIKAN) -->
+    <!-- FORM PAGE -->
     <div id="formPage">
       <div class="form-card">
         <div class="form-header">
-          <button onclick="showLanding()" class="back-btn">
-            ← Kembali ke Beranda
-          </button>
+          <button onclick="showLanding()" class="back-btn">← Kembali ke Beranda</button>
           <h2>FORMULIR PENDAFTARAN</h2>
           <p>SMP NEGERI 3 KAWANGKOAN - TAHUN AJARAN 2026/2027</p>
         </div>
         
         <div class="form-body">
-          <!-- Alert -->
           <div id="alert" class="alert"></div>
-          
-          <!-- Loading -->
           <div id="loading" class="loading">
             <div class="loading-spinner"></div>
             <p>Memproses pendaftaran...</p>
           </div>
           
-          <!-- Form -->
           <form id="registrationForm" onsubmit="return submitForm(event)">
             <!-- DATA CALON MURID -->
             <div class="section">
               <h3>A. DATA CALON MURID BARU</h3>
-              
               <div class="form-grid">
                 <div class="form-group">
                   <label>Nama Lengkap *</label>
-                  <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                  <input type="text" id="nama" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Jenis Kelamin *</label>
                   <div class="radio-group">
-                    <label>
-                      <input type="radio" name="jk" value="Laki-laki" required> Laki-laki
-                    </label>
-                    <label>
-                      <input type="radio" name="jk" value="Perempuan" required> Perempuan
-                    </label>
+                    <label><input type="radio" name="jk" value="Laki-laki" required> Laki-laki</label>
+                    <label><input type="radio" name="jk" value="Perempuan" required> Perempuan</label>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                  <label>NIPD</label>
-                  <input type="text" id="nipd" name="nipd" placeholder="(opsional)">
-                </div>
-                
-                <!-- Untuk NISN -->
-                <div class="form-group">
                   <label>NISN *</label>
-                  <input type="text" id="nisn" name="nisn" maxlength="10" placeholder="10 digit angka" required>
-                  <small style="color: #6c757d;">10 digit angka</small>
-                  <div id="nisnStatus" style="font-size: 12px; margin-top: 5px; min-height: 20px;"></div>
+                  <input type="text" id="nisn" maxlength="10" placeholder="10 digit angka" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Tempat Lahir *</label>
-                  <input type="text" id="tempatLahir" name="tempatLahir" placeholder="Contoh: Kawangkoan" required>
+                  <input type="text" id="tempatLahir" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Tanggal Lahir *</label>
-                  <input type="date" id="tglLahir" name="tglLahir" required>
+                  <input type="date" id="tglLahir" required>
                 </div>
                 
-                <!-- Untuk NIK -->
                 <div class="form-group">
                   <label>NIK *</label>
-                  <input type="text" id="nik" name="nik" maxlength="16" placeholder="16 digit angka" required>
-                  <small style="color: #6c757d;">16 digit angka</small>
-                  <div id="nikStatus" style="font-size: 12px; margin-top: 5px; min-height: 20px;"></div>
+                  <input type="text" id="nik" maxlength="16" placeholder="16 digit angka" required>
                 </div>
                 
                 <div class="form-group">
-                  <label>No. KK</label>
-                  <input type="text" id="noKK" name="noKK" placeholder="Nomor Kartu Keluarga">
+                  <label>No. KK *</label>
+                  <input type="text" id="noKK" required>
                 </div>
                 
                 <div class="form-group" style="grid-column: 1/-1;">
                   <label>Alamat Lengkap *</label>
-                  <textarea id="alamat" name="alamat" rows="2" placeholder="Contoh: Jaga 1, Lingkungan 2" required></textarea>
+                  <textarea id="alamat" rows="2" required></textarea>
                 </div>
                 
                 <div class="form-group">
-                  <label>Desa/Kelurahan</label>
-                  <input type="text" id="desa" name="desa" placeholder="Contoh: Kawangkoan">
+                  <label>Desa/Kelurahan *</label>
+                  <input type="text" id="desa" required>
                 </div>
                 
                 <div class="form-group">
-                  <label>Kecamatan</label>
-                  <input type="text" id="kecamatan" name="kecamatan" placeholder="Contoh: Kawangkoan">
+                  <label>Kecamatan *</label>
+                  <input type="text" id="kecamatan" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Kabupaten/Kota</label>
-                  <input type="text" id="kabupaten" name="kabupaten" value="Minahasa">
+                  <input type="text" id="kabupaten" value="Minahasa">
                 </div>
                 
                 <div class="form-group">
                   <label>No. HP/WA *</label>
-                  <input type="tel" id="hp" name="hp" placeholder="Contoh: 081234567890" required>
+                  <input type="tel" id="hp" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Email *</label>
-                  <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
-                </div>
-                
-                <div class="form-group">
-                  <label>Nilai Rerata Semester Ganjil</label>
-                  <input type="number" id="nilaiRerata" name="nilaiRerata" step="0.01" min="0" max="100" placeholder="0-100">
+                  <input type="email" id="email" required>
                 </div>
                 
                 <div class="form-group">
                   <label>Asal Sekolah *</label>
-                  <input type="text" id="asalSekolah" name="asalSekolah" placeholder="Contoh: SD Negeri 1 Kawangkoan" required>
+                  <input type="text" id="asalSekolah" required>
                 </div>
               </div>
             </div>
@@ -1100,57 +751,35 @@
             <div class="section">
               <h3>B. DATA ORANG TUA/WALI</h3>
               
-              <h4 style="margin: 15px 0 10px; color: #2c3e50;">1. Ayah</h4>
+              <h4 style="margin: 15px 0 10px;">1. Ayah</h4>
               <div class="form-grid">
                 <div class="form-group">
                   <label>Nama Lengkap *</label>
-                  <input type="text" id="namaAyah" name="namaAyah" placeholder="Nama lengkap ayah" required>
+                  <input type="text" id="namaAyah" required>
                 </div>
-                
                 <div class="form-group">
                   <label>Pekerjaan</label>
-                  <input type="text" id="pekerjaanAyah" name="pekerjaanAyah" placeholder="Contoh: Petani, PNS, dll">
+                  <input type="text" id="pekerjaanAyah">
                 </div>
-                
                 <div class="form-group">
-                  <label>No. HP/WA</label>
-                  <input type="tel" id="hpAyah" name="hpAyah" placeholder="Nomor HP ayah">
+                  <label>No. HP</label>
+                  <input type="tel" id="hpAyah">
                 </div>
               </div>
               
-              <h4 style="margin: 20px 0 10px; color: #2c3e50;">2. Ibu</h4>
+              <h4 style="margin: 20px 0 10px;">2. Ibu</h4>
               <div class="form-grid">
                 <div class="form-group">
                   <label>Nama Lengkap *</label>
-                  <input type="text" id="namaIbu" name="namaIbu" placeholder="Nama lengkap ibu" required>
+                  <input type="text" id="namaIbu" required>
                 </div>
-                
                 <div class="form-group">
                   <label>Pekerjaan</label>
-                  <input type="text" id="pekerjaanIbu" name="pekerjaanIbu" placeholder="Contoh: Ibu Rumah Tangga, PNS, dll">
+                  <input type="text" id="pekerjaanIbu">
                 </div>
-                
                 <div class="form-group">
-                  <label>No. HP/WA</label>
-                  <input type="tel" id="hpIbu" name="hpIbu" placeholder="Nomor HP ibu">
-                </div>
-              </div>
-              
-              <h4 style="margin: 20px 0 10px; color: #2c3e50;">3. Wali (jika ada)</h4>
-              <div class="form-grid">
-                <div class="form-group">
-                  <label>Nama Lengkap</label>
-                  <input type="text" id="namaWali" name="namaWali" placeholder="Nama lengkap wali">
-                </div>
-                
-                <div class="form-group">
-                  <label>Pekerjaan</label>
-                  <input type="text" id="pekerjaanWali" name="pekerjaanWali" placeholder="Pekerjaan wali">
-                </div>
-                
-                <div class="form-group">
-                  <label>No. HP/WA</label>
-                  <input type="tel" id="hpWali" name="hpWali" placeholder="Nomor HP wali">
+                  <label>No. HP</label>
+                  <input type="tel" id="hpIbu">
                 </div>
               </div>
             </div>
@@ -1158,49 +787,36 @@
             <!-- DATA TAMBAHAN -->
             <div class="section">
               <h3>C. DATA TAMBAHAN</h3>
-              
               <div class="form-grid">
                 <div class="form-group">
-                  <label>Anak Ke-</label>
-                  <input type="number" id="anakKe" name="anakKe" min="1" placeholder="Contoh: 1">
+                  <label>Anak Ke- *</label>
+                  <input type="number" id="anakKe" min="1" required>
                 </div>
-                
                 <div class="form-group">
-                  <label>Jumlah Saudara Kandung</label>
-                  <input type="number" id="jmlSaudara" name="jmlSaudara" min="0" placeholder="Contoh: 2">
+                  <label>Jumlah Saudara Kandung *</label>
+                  <input type="number" id="jmlSaudara" min="0" required>
                 </div>
-                
                 <div class="form-group">
-                  <label>Jarak Rumah ke Sekolah (KM)</label>
-                  <input type="number" id="jarakRumah" name="jarakRumah" step="0.1" min="0" placeholder="Contoh: 2.5">
+                  <label>Jarak Rumah ke Sekolah (KM) *</label>
+                  <input type="number" id="jarakRumah" step="0.1" min="0" required>
                 </div>
               </div>
             </div>
             
             <div class="form-group">
-              <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%;">
-                DAFTAR SEKARANG
-              </button>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">DAFTAR SEKARANG</button>
             </div>
-            
-            <p style="text-align: center; color: #6c757d; font-size: 12px; margin-top: 10px;">
-              * Field wajib diisi
-            </p>
+            <p style="text-align: center; color: #6c757d; font-size: 12px;">* Field wajib diisi</p>
           </form>
           
-          <!-- Hasil Pendaftaran -->
-          <div id="result" class="result-container" style="display: none;">
+          <div id="result" class="result-container">
             <h3>✓ PENDAFTARAN BERHASIL!</h3>
             <p>Nomor Registrasi Anda:</p>
             <div class="no-reg-box" id="noRegDisplay"></div>
-            <p style="margin: 20px 0;">Silakan unduh formulir pendaftaran dan bawa ke sekolah bersama kelengkapan lainnya.</p>
-            <a href="#" id="downloadLink" class="btn-download" target="_blank">
-              📥 UNDUH FORMULIR PDF
-            </a>
+            <p style="margin: 20px 0;">Formulir PDF akan dibuat menggunakan template resmi.</p>
+            <button onclick="downloadPDF()" class="btn-download" id="downloadBtn">📥 DOWNLOAD PDF</button>
             <p style="margin-top: 30px;">
-              <button onclick="resetAndBackToLanding()" class="btn btn-outline" style="padding: 10px 30px;">
-                ← KEMBALI KE BERANDA
-              </button>
+              <button onclick="resetAndBackToLanding()" class="btn btn-outline" style="padding: 10px 30px;">← KEMBALI KE BERANDA</button>
             </p>
           </div>
         </div>
@@ -1209,103 +825,13 @@
   </div>
 
   <script>
-    // Variabel untuk menyimpan status duplikat
-    let nisnDuplikat = false;
-    let nikDuplikat = false;
+    // Data pendaftaran terakhir
+    let lastRegistrationData = null;
+    let lastNoReg = null;
 
-    // Fungsi cek NISN real-time
-    function cekNISN() {
-      const nisn = document.getElementById('nisn').value;
-      const nik = document.getElementById('nik').value;
-      const statusDiv = document.getElementById('nisnStatus');
-      const submitBtn = document.getElementById('submitBtn');
-      
-      if (nisn.length === 10) {
-        google.script.run
-          .withSuccessHandler(function(result) {
-            nisnDuplikat = result.nisnDuplikat;
-            
-            if (result.nisnDuplikat) {
-              statusDiv.innerHTML = '⚠️ NISN sudah terdaftar!';
-              statusDiv.style.color = '#dc3545';
-              statusDiv.style.fontWeight = 'bold';
-            } else {
-              statusDiv.innerHTML = '✅ NISN tersedia';
-              statusDiv.style.color = '#28a745';
-            }
-            
-            // Update tombol submit
-            updateSubmitButton();
-          })
-          .cekDuplikatRealTime(nisn, nik);
-      } else {
-        statusDiv.innerHTML = '';
-      }
-    }
-
-    // Fungsi cek NIK real-time
-    function cekNIK() {
-      const nisn = document.getElementById('nisn').value;
-      const nik = document.getElementById('nik').value;
-      const statusDiv = document.getElementById('nikStatus');
-      const submitBtn = document.getElementById('submitBtn');
-      
-      if (nik.length === 16) {
-        google.script.run
-          .withSuccessHandler(function(result) {
-            nikDuplikat = result.nikDuplikat;
-            
-            if (result.nikDuplikat) {
-              statusDiv.innerHTML = '⚠️ NIK sudah terdaftar!';
-              statusDiv.style.color = '#dc3545';
-              statusDiv.style.fontWeight = 'bold';
-            } else {
-              statusDiv.innerHTML = '✅ NIK tersedia';
-              statusDiv.style.color = '#28a745';
-            }
-            
-            // Update tombol submit
-            updateSubmitButton();
-          })
-          .cekDuplikatRealTime(nisn, nik);
-      } else {
-        statusDiv.innerHTML = '';
-      }
-    }
-
-    // Fungsi update tombol submit berdasarkan status duplikat
-    function updateSubmitButton() {
-      const submitBtn = document.getElementById('submitBtn');
-      
-      if (nisnDuplikat || nikDuplikat) {
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.5';
-        submitBtn.style.cursor = 'not-allowed';
-        submitBtn.title = 'Harap perbaiki data duplikat terlebih dahulu';
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        submitBtn.style.cursor = 'pointer';
-        submitBtn.title = '';
-      }
-    }
-
-    // Update event listeners
-    document.getElementById('nisn').addEventListener('input', function(e) {
-      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
-      cekNISN();
-    });
-
-    document.getElementById('nik').addEventListener('input', function(e) {
-      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);
-      cekNIK();
-    });
-
-
-
-    // Hitung mundur ke 12 Juni 2026
+    // Countdown timer
     function updateCountdown() {
-      const targetDate = new Date('June 12, 2026 23:59:59').getTime();
+      const targetDate = new Date('July 09, 2026 23:59:59').getTime();
       const now = new Date().getTime();
       const distance = targetDate - now;
       
@@ -1328,18 +854,16 @@
       document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
     }
     
-    // Update countdown setiap detik
     setInterval(updateCountdown, 1000);
     updateCountdown();
     
-    // Fungsi untuk menampilkan form
+    // Navigasi
     function showForm() {
       document.getElementById('landingPage').style.display = 'none';
       document.getElementById('formPage').style.display = 'block';
       window.scrollTo(0, 0);
     }
     
-    // Fungsi untuk menampilkan landing page
     function showLanding() {
       document.getElementById('formPage').style.display = 'none';
       document.getElementById('landingPage').style.display = 'block';
@@ -1350,254 +874,9 @@
       window.scrollTo(0, 0);
     }
     
-    // Fungsi setelah sukses daftar, kembali ke landing
     function resetAndBackToLanding() {
       showLanding();
     }
     
-    // Fungsi submit form (sama seperti sebelumnya)
-    function submitForm(e) {
-    e.preventDefault();
-    
-    // Tampilkan loading
-    document.getElementById('loading').style.display = 'block';
-    document.getElementById('registrationForm').style.display = 'none';
-    
-    // Kumpulkan data form (sama seperti sebelumnya)
-    const formData = {
-      nama: document.getElementById('nama').value,
-      jk: document.querySelector('input[name="jk"]:checked').value,
-      nisn: document.getElementById('nisn').value,
-      nik: document.getElementById('nik').value,
-      tempatLahir: document.getElementById('tempatLahir').value,
-      tglLahir: document.getElementById('tglLahir').value,
-      alamat: document.getElementById('alamat').value,
-      hp: document.getElementById('hp').value,
-      email: document.getElementById('email').value,
-      asalSekolah: document.getElementById('asalSekolah').value,
-      namaAyah: document.getElementById('namaAyah').value,
-      namaIbu: document.getElementById('namaIbu').value
-      // tambah field lain sesuai form Anda
-    };
-    
-    // PANGGIL APPS SCRIPT
-    google.script.run
-      .withSuccessHandler(handleSuccess)
-      .withFailureHandler(handleFailure)
-      .daftar(formData);
-  }
-    
-    function handleSuccess(result) {
-      document.getElementById('loading').style.display = 'none';
-      
-      if (result.sukses) {
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('registrationForm').style.display = 'none';
-        document.getElementById('noRegDisplay').textContent = result.noRegistrasi;
-        document.getElementById('downloadLink').href = result.pdfUrl;
-      } else {
-        document.getElementById('registrationForm').style.display = 'block';
-        
-        let errorMessage = result.pesan;
-        if (result.errors && result.errors.length > 0) {
-          errorMessage += '<ul style="margin-top: 10px; padding-left: 20px;">';
-          result.errors.forEach(err => {
-            errorMessage += `<li>${err}</li>`;
-          });
-          errorMessage += '</ul>';
-        }
-        
-        const alert = document.getElementById('alert');
-        alert.className = 'alert alert-error';
-        alert.innerHTML = errorMessage;
-        alert.style.display = 'block';
-      }
-    }
-    
-    function handleFailure(error) {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('registrationForm').style.display = 'block';
-      
-      const alert = document.getElementById('alert');
-      alert.className = 'alert alert-error';
-      alert.innerHTML = 'Terjadi kesalahan koneksi. Silakan coba lagi.';
-      alert.style.display = 'block';
-    }
-    
     // Validasi input angka
-    document.getElementById('nisn').addEventListener('input', function(e) {
-      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
-    });
-    
-    document.getElementById('nik').addEventListener('input', function(e) {
-      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);
-    });
-
-    // Fungsi untuk membuka modal video
-    function openVideoModal() {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('videoIframe');
-      
-      // Ganti VIDEO_ID dengan ID video YouTube Anda
-      const videoId = 'VIDEO_ID'; // Contoh: 'dQw4w9WgXcQ'
-      
-      modal.style.display = 'flex';
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
-      
-      // Cegah scroll di background
-      document.body.style.overflow = 'hidden';
-    }
-
-    // Fungsi untuk menutup modal video
-    function closeVideoModal() {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('videoIframe');
-      
-      modal.style.display = 'none';
-      iframe.src = ''; // Hentikan video
-      
-      // Kembalikan scroll
-      document.body.style.overflow = 'auto';
-    }
-
-    // Tutup modal dengan tombol ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeVideoModal();
-      }
-    });
-
-    // Tutup modal jika klik di luar video
-    window.onclick = function(event) {
-      const modal = document.getElementById('videoModal');
-      if (event.target == modal) {
-        closeVideoModal();
-      }
-    }
-    // ============================================
-    // FUNGSI DOWNLOAD PDF BARU (PAKAI GAS)
-    // ============================================
-    
-    // GANTI URL_INI dengan URL Web App GAS Anda setelah deploy
-    const GAS_PDF_URL = 'https://script.google.com/macros/s/AKfycbx3Ka-O6nC8zv51yS5Tppluo_edn-kjltFIPzeaIJSSp4JBle4JaoBmqJ494MXcS509/exec';
-    
-    function downloadPDF() {
-      if (!lastRegistrationData || !lastNoReg) {
-        alert('Data tidak ditemukan');
-        return;
-      }
-      
-      // Tampilkan loading
-      const btn = document.getElementById('downloadBtn');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '⏳ MENYIAPKAN PDF...';
-      btn.disabled = true;
-      
-      // Siapkan data untuk dikirim ke GAS
-      const dataForPDF = {
-        noRegistrasi: lastNoReg,
-        nama: lastRegistrationData.nama,
-        jk: lastRegistrationData.jk,
-        nisn: lastRegistrationData.nisn,
-        tempatLahir: lastRegistrationData.tempat_lahir,
-        tglLahir: formatTanggal(lastRegistrationData.tanggal_lahir),
-        nik: lastRegistrationData.nik,
-        noKK: lastRegistrationData.no_kk,
-        alamat: lastRegistrationData.alamat,
-        desa: lastRegistrationData.kelurahan_desa,
-        kecamatan: lastRegistrationData.kecamatan,
-        kabupaten: lastRegistrationData.kabupaten_kota,
-        hp: lastRegistrationData.hp,
-        email: lastRegistrationData.email,
-        asalSekolah: lastRegistrationData.sekolah_asal,
-        namaAyah: lastRegistrationData.nama_ayah,
-        pekerjaanAyah: lastRegistrationData.ayah_pekerjaan,
-        hpAyah: lastRegistrationData.ayah_hp,
-        namaIbu: lastRegistrationData.ibu_nama,
-        pekerjaanIbu: lastRegistrationData.ibu_pekerjaan,
-        hpIbu: lastRegistrationData.ibu_hp,
-        namaWali: lastRegistrationData.wali_nama,
-        pekerjaanWali: lastRegistrationData.wali_pekerjaan,
-        hpWali: lastRegistrationData.wali_hp,
-        anakKe: lastRegistrationData.anak_ke_berapa,
-        jmlSaudara: lastRegistrationData.jml_saudara_kandung,
-        jarakRumah: lastRegistrationData.jarak_rumah_ke_sekolah
-      };
-      
-      // Kirim ke GAS
-      fetch(GAS_PDF_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataForPDF)
-      })
-      .then(() => {
-        alert('✅ PDF sedang dibuat di Google Drive panitia.\n\nKlik OK untuk membuka folder Google Drive.');
-        window.open('https://drive.google.com/drive/folders/1bhNTJ6etUjNNDceRYiM4bB1v3rOSqjIj', '_blank');
-        
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('❌ Gagal membuat PDF. Silakan coba lagi.');
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      });
-    }
-    
-    function formatTanggal(tanggal) {
-      if (!tanggal) return '-';
-      const d = new Date(tanggal);
-      return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-    }
-  </script>
-
-  <!-- MODAL VIDEO (PILIHAN 4) -->
-  <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-              background: rgba(0,0,0,0.95); z-index: 9999; align-items: center; justify-content: center;
-              backdrop-filter: blur(8px);">
-    
-    <div style="position: relative; width: 90%; max-width: 900px;">
-      
-      <!-- Tombol Close -->
-      <button onclick="closeVideoModal()" 
-              style="position: absolute; top: -50px; right: 0; 
-                    background: rgba(255,255,255,0.2); border: none; color: white; 
-                    width: 45px; height: 45px; border-radius: 50%; font-size: 24px; 
-                    cursor: pointer; display: flex; align-items: center; justify-content: center;
-                    transition: all 0.3s; border: 2px solid rgba(255,255,255,0.1);"
-              onmouseover="this.style.background='rgba(255,255,255,0.3)'; this.style.transform='rotate(90deg)'"
-              onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.transform='rotate(0deg)'">
-        ✕
-      </button>
-      
-      <!-- Video Container -->
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px;
-                  box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 3px solid rgba(255,255,255,0.1);">
-        <iframe id="videoIframe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                src="" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-      </div>
-      
-      <!-- Info Video -->
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px; color: white;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <span style="background: #ff4b2b; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold;">📺 TUTORIAL</span>
-          <span style="color: #aaa;">Pendaftaran PMB 2026/2027</span>
-        </div>
-        <div style="color: #ffd700; font-size: 14px;">
-          ⏱️ 3 menit 25 detik
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-
-</body>
-</html>
+    document.getElementById('nisn').add
