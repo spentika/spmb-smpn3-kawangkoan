@@ -879,4 +879,100 @@
     }
     
     // Validasi input angka
-    document.getElementById('nisn').add
+    document.getElementById('nisn').addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+    });
+    
+    document.getElementById('nik').addEventListener('input', function(e) {
+      this.value = this.value.replace(/[^0-9]/g, '').slice(0, 16);
+    });
+    
+    // Submit form
+    function submitForm(e) {
+      e.preventDefault();
+      
+      if (!document.querySelector('input[name="jk"]:checked')) {
+        alert('Pilih jenis kelamin terlebih dahulu');
+        return false;
+      }
+      
+      document.getElementById('loading').style.display = 'block';
+      document.getElementById('registrationForm').style.display = 'none';
+      
+      // Kumpulkan data
+      const formData = {
+        timestamp: new Date().toLocaleString('id-ID'),
+        nama: document.getElementById('nama').value,
+        jk: document.querySelector('input[name="jk"]:checked').value,
+        nisn: document.getElementById('nisn').value,
+        tempat_lahir: document.getElementById('tempatLahir').value,
+        tanggal_lahir: document.getElementById('tglLahir').value,
+        nik: document.getElementById('nik').value,
+        no_kk: document.getElementById('noKK').value,
+        alamat: document.getElementById('alamat').value,
+        kelurahan_desa: document.getElementById('desa').value,
+        kecamatan: document.getElementById('kecamatan').value,
+        kabupaten_kota: document.getElementById('kabupaten').value,
+        provinsi: 'Sulawesi Utara',
+        hp: document.getElementById('hp').value,
+        email: document.getElementById('email').value,
+        sekolah_asal: document.getElementById('asalSekolah').value,
+        nama_ayah: document.getElementById('namaAyah').value,
+        ayah_pekerjaan: document.getElementById('pekerjaanAyah').value || '-',
+        ayah_hp: document.getElementById('hpAyah').value || '-',
+        ibu_nama: document.getElementById('namaIbu').value,
+        ibu_pekerjaan: document.getElementById('pekerjaanIbu').value || '-',
+        ibu_hp: document.getElementById('hpIbu').value || '-',
+        anak_ke_berapa: document.getElementById('anakKe').value,
+        jml_saudara_kandung: document.getElementById('jmlSaudara').value,
+        jarak_rumah_ke_sekolah: document.getElementById('jarakRumah').value
+      };
+      
+      // Generate no registrasi
+      const now = new Date();
+      const tahun = now.getFullYear();
+      const bulan = String(now.getMonth() + 1).padStart(2, '0');
+      const kodeJK = formData.jk === 'Laki-laki' ? '01' : '02';
+      const random = Math.floor(Math.random() * 900 + 100);
+      const noReg = `${tahun}-${bulan}-${kodeJK}-${random}`;
+      
+      formData.no_registrasi = noReg;
+      lastRegistrationData = formData;
+      lastNoReg = noReg;
+      
+      // Kirim ke sheetDB.io
+      fetch('https://sheetdb.io/api/v1/6q0y38pzp2w09', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: [formData] })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('loading').style.display = 'none';
+        
+        if (data.created || data.success) {
+          document.getElementById('result').style.display = 'block';
+          document.getElementById('registrationForm').style.display = 'none';
+          document.getElementById('noRegDisplay').textContent = noReg;
+        } else {
+          document.getElementById('registrationForm').style.display = 'block';
+          alert('Gagal menyimpan data. Silakan coba lagi.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('registrationForm').style.display = 'block';
+        alert('Terjadi kesalahan koneksi. Silakan coba lagi.');
+      });
+      
+      return false;
+    }
+    
+    // Fungsi download PDF (sementara sederhana)
+    function downloadPDF() {
+      alert('Fitur PDF sedang dalam pengembangan. Silakan screenshot formulir ini.');
+    }
+  </script>
+</body>
+</html>
