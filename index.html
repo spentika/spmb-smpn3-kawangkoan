@@ -969,9 +969,96 @@
       return false;
     }
     
-    // Fungsi download PDF (sementara sederhana)
+    // ============================================
+    // FUNGSI DOWNLOAD PDF DENGAN GAS
+    // ============================================
+    
+    // URL Google Apps Script Anda
+    const GAS_PDF_URL = 'https://script.google.com/macros/s/AKfycbx3Ka-O6nC8zv51yS5Tppluo_edn-kjltFIPzeaIJSSp4JBle4JaoBmqJ494MXcS509/exec';
+    
     function downloadPDF() {
-      alert('Fitur PDF sedang dalam pengembangan. Silakan screenshot formulir ini.');
+      if (!lastRegistrationData || !lastNoReg) {
+        alert('Data tidak ditemukan. Silakan submit formulir terlebih dahulu.');
+        return;
+      }
+      
+      // Tampilkan loading pada tombol
+      const btn = document.getElementById('downloadBtn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '⏳ MENYIAPKAN PDF...';
+      btn.disabled = true;
+      
+      // Siapkan data untuk dikirim ke GAS
+      const dataForPDF = {
+        noRegistrasi: lastNoReg,
+        nama: lastRegistrationData.nama,
+        jk: lastRegistrationData.jk,
+        nisn: lastRegistrationData.nisn,
+        tempatLahir: lastRegistrationData.tempat_lahir,
+        tglLahir: formatTanggal(lastRegistrationData.tanggal_lahir),
+        nik: lastRegistrationData.nik,
+        noKK: lastRegistrationData.no_kk,
+        alamat: lastRegistrationData.alamat,
+        desa: lastRegistrationData.kelurahan_desa,
+        kecamatan: lastRegistrationData.kecamatan,
+        kabupaten: lastRegistrationData.kabupaten_kota,
+        provinsi: 'Sulawesi Utara',
+        hp: lastRegistrationData.hp,
+        email: lastRegistrationData.email,
+        asalSekolah: lastRegistrationData.sekolah_asal,
+        namaAyah: lastRegistrationData.nama_ayah,
+        pekerjaanAyah: lastRegistrationData.ayah_pekerjaan,
+        hpAyah: lastRegistrationData.ayah_hp,
+        namaIbu: lastRegistrationData.ibu_nama,
+        pekerjaanIbu: lastRegistrationData.ibu_pekerjaan,
+        hpIbu: lastRegistrationData.ibu_hp,
+        anakKe: lastRegistrationData.anak_ke_berapa,
+        jmlSaudara: lastRegistrationData.jml_saudara_kandung,
+        jarakRumah: lastRegistrationData.jarak_rumah_ke_sekolah
+      };
+      
+      console.log('Mengirim data ke GAS:', dataForPDF);
+      
+      // Kirim ke Google Apps Script
+      fetch(GAS_PDF_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Penting untuk GAS
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataForPDF)
+      })
+      .then(() => {
+        // Karena mode no-cors, kita tidak bisa membaca response
+        // Tapi kita tahu request sudah terkirim
+        
+        // Tampilkan pesan sukses
+        alert('✅ PDF sedang diproses!\n\n' +
+              'Formulir akan tersimpan di Google Drive panitia.\n\n' +
+              'Klik OK untuk membuka folder Google Drive.');
+        
+        // Buka folder Google Drive (ganti dengan folder ID Anda)
+        window.open('https://drive.google.com/drive/folders/1bhNTJ6etUjNNDceRYiM4bB1v3rOSqjIj', '_blank');
+        
+        // Kembalikan tombol ke keadaan semula
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('❌ Gagal membuat PDF. Silakan coba lagi atau hubungi panitia.');
+        
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      });
+    }
+    
+    // Fungsi bantu format tanggal
+    function formatTanggal(tanggal) {
+      if (!tanggal) return '-';
+      const d = new Date(tanggal);
+      const options = { day: 'numeric', month: 'long', year: 'numeric' };
+      return d.toLocaleDateString('id-ID', options);
     }
   </script>
 </body>
